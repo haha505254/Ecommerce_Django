@@ -1,4 +1,7 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+import datetime
 
 def home(request):
-    return HttpResponse("homepage")
+    now = datetime.datetime.now() # 現在時間
+    context = {'now':now}
+    return render(request, 'home.html', context)
