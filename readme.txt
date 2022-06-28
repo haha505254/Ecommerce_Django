@@ -1,4 +1,4 @@
-admin 
-username:root
-email:admin@admin.com
-password:123456
+Email: admin@admin.com
+Username: admin
+First name: admin
+Last name: admin
