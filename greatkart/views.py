@@ -1,8 +1,12 @@
+from multiprocessing import context
+from zoneinfo import available_timezones
 from django.shortcuts import render
-import datetime
+from store.models import Product
 
 
 def home(request):
-    now = datetime.datetime.now()  # 現在時間
-    context = {'now': now}
-    return render(request, 'home.html', context)
+    products = Product.objects.all().filter(is_available=True)
+    context = {
+        'products':products
+    }
+    return render(request, 'home.html',context)
